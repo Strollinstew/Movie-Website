@@ -42,8 +42,6 @@ $result = $koneksi->query($query);
                         <p class="card-year"><?php echo $row['year']; ?></p>
                         <p class="card-genre"><?php echo $row['genre']; ?></p>
                         <p class="card-rating"><?php echo $row['rating']; ?></p>
-                    </div>
-                    <div class="card-info">
                         <p class="card-description"><?php echo $row['description']; ?></p>
                     </div>
                 </div>
