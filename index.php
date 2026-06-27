@@ -12,7 +12,7 @@ $resulto = $koneksi->query($queryo);
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Home</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet" />
@@ -29,46 +29,49 @@ $resulto = $koneksi->query($queryo);
             <a href="#">My List</a>
         </div>
         <div class="second-nav">
-            <a href="#">Login</a>
+            <a href="login.php">Login</a>
             <a href="#">Sign Up</a>
         </div>
     </nav>
-    <div class="scope product-cards | -fluid-text">
-        <h1 class="title-top-rated">Top rated</h1>
-        <div class="_card-list | grid" style="
-      --grid--fill-mode: var(--product-cards--fill-mode, auto-fill);
-      --grid--row-gap: var(--product-cards--gap, 1.5rem);
-      --grid--column-gap: var(--product-cards--gap, 1.5rem);
-      --grid--column-max-count: var(--product-cards--column-max-count, 4);
-      --grid--column-min-width: var(--product-cards--column-min-width, 20rem);">
 
-            <?php while ($row = $result->fetch_assoc()) { ?>
-                <section class="_card">
-                    <h2 class="_heading | -fluid-text -trim-both" style="--fluid-text--min-font-size: 16;
-      --fluid-text--max-font-size: 24;"><?php echo $row['title']; ?></h2>
-                    <div class="_thumbnail-stack">
-                        <img src="<?php echo $row['image']; ?>" alt="" width="400" height="210" fetchpriority="high" />
-                        <img src="<?php echo $row['image']; ?>" alt="" width="400" height="210" fetchpriority="high" />
+    <div class="product-cards">
+        <h1 class="title-top-rated">Top Rated</h1>
+        <div class="card-list">
+            <?php while ($row = $result->fetch_assoc()) { 
+            
+            $movieId = $row['idMovie'];
+            ?>
+            <div class="card">
+                <div class="poster">
+                    <img src="<?php echo $row['image'] ?>" alt="Movie Poster">
+                    <span class="category"><?php echo $row['type'] ?></span>
+                </div>
+                <div class="card-content">
+                    <div class="title-movie">
+                        <h2><?php echo $row['title'] ?></h2>
+                        <span class="year"><?php echo $row['year'] ?></span>
                     </div>
-                    <p class="_category | -trim-both">Category A</p>
-                    <p class="_price | -trim-both"><?php echo $row['year']; ?></p>
-                    <p class="_description | -line-clamp"><?php echo $row['description']; ?></p>
-                    <p class="_description | -line-clamp"><?php echo $row['rating']; ?></p>
-                    <ul class="_tag-list | cluster" style="
-      --cluster--gap: 0.5rem;">
-      <?php while ($rowy = $resulto->fetch_assoc()) {?>
-                        <li class="_tag | -trim-both"><?php echo $rowy['nameGenre']?></li>
-                        <?php } ?>
-                    <div class="_button"
-                        style="--purchase-button--background: var(--_accent); --purchase-button--foreground: var(--_accent-contrast);">
-                        <a href="#" class="scope purchase-button">See more</a>
+                    <p class="description">
+                        <?php echo $row['description'] ?>
+                    </p>
+                    <p class="rating"><?php echo $row[''] ?></p>
+                     <?php while ($rowo = $resulto->fetch_assoc()) {?>
+                    <div class="tags">
+                        <span class="tag">
+                            <?php echo $rowo['nameGenre']?>
+                        </span>
                     </div>
-                </section>
+                    <?php } ?>
+                    <a href="seeMore.php?id=<?php echo $movieId ?>" class="btn">See More</a>
+                </div>
+            </div>
             <?php } ?>
         </div>
     </div>
 
-    <script></script>
+    <script>
+
+    </script>
 </body>
 
 </html>
