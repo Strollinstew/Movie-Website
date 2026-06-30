@@ -1,6 +1,5 @@
 <?php
 include 'koneksi.php';
-include 'seeMore.php';
 $query = "SELECT * FROM movie";
 $result = $koneksi->query($query);
 
@@ -23,14 +22,13 @@ $resulto = $koneksi->query($queryo);
 <body>
     <div class="form-box">
         <form action="login.php" method="POST" class="form">
-            <span class="title">Sign up</span>
-            <span class="subtitle">Create a free account with your email.</span>
+            <span class="title">Log in</span>
             <div class="form-container">
                 <input type="text" name="name" class="input" placeholder="Full Name">
                 <input type="email" name="email" class="input" placeholder="Email">
                 <input type="password" name="password" class="input" placeholder="Password">
             </div>
-            <button>Log in</button>
+            <input type="submit" value="login" id="submit">
         </form>
     </div>
 </body>

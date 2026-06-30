@@ -10,7 +10,7 @@ $id = intval($_GET['id']);
 
 $querye = "SELECT * FROM movie WHERE idMovie = $id";
 $resulte = $koneksi->query($querye)
-    ?>
+?>
 <!doctype html>
 <html lang="en">
 
@@ -45,24 +45,25 @@ $resulte = $koneksi->query($querye)
         </div>
     </div>
 
-    <div id="review-container">
+    <div id="review-container" style="display: none;">
         <form action="review.php" method="POST" class="review-form">
+            <input type="hidden" name="movieId" value="<?php echo $id ?>">
 
             <label for="star"><b>Stars</b></label>
             <br>
-            <input type="radio" id="one" name="stars" value="one">
+            <input type="radio" id="one" name="stars" value="1">
             <label for="one">1⭐</label>
             <br>
-            <input type="radio" id="two" name="stars" value="two">
+            <input type="radio" id="two" name="stars" value="2">
             <label for="two">2⭐</label>
             <br>
-            <input type="radio" id="three" name="stars" value="three">
+            <input type="radio" id="three" name="stars" value="3">
             <label for="three">3⭐</label>
             <br>
-            <input type="radio" id="four" name="stars" value="four">
+            <input type="radio" id="four" name="stars" value="4">
             <label for="four">4⭐</label>
             <br>
-            <input type="radio" id="five" name="stars" value="five">
+            <input type="radio" id="five" name="stars" value="5">
             <label for="five">5⭐</label>
             <br>
 

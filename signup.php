@@ -2,12 +2,12 @@
 session_start();
 include 'koneksi.php';
 
-$name = $_POST['name'];
-$email = $_POST['email'];
-$password = $_POST['password'];
+$names = $_POST['name'];
+$emails = $_POST['email'];
+$passwords = $_POST['password'];
 
-$queryl = "INSERT INTO user (name, email, password) VALUES ($name, $email, $password)";
-$resultl = $koneksi->query($queryl);
+$queryf = "INSERT INTO user (name, email, password) VALUES ('$names', '$emails', '$passwords')";
+$resultf = $koneksi->query($queryf);
 
 header("Location:index.php");
 ?>

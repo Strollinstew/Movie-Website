@@ -29,8 +29,8 @@ $resulto = $koneksi->query($queryo);
             <a href="#">My List</a>
         </div>
         <div class="second-nav">
-            <a href="login.php">Login</a>
-            <a href="#">Sign Up</a>
+            <a href="loginview.php">Log in</a>
+            <a href="signupview.php">Sign Up</a>
         </div>
     </nav>
 
