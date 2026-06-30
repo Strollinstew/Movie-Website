@@ -10,14 +10,14 @@ $id = intval($_GET['id']);
 
 $querye = "SELECT * FROM movie WHERE idMovie = $id";
 $resulte = $koneksi->query($querye)
-?>
+    ?>
 <!doctype html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>See More</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet" />
@@ -28,19 +28,21 @@ $resulte = $koneksi->query($querye)
 
     <div class="detailed">
         <?php while ($rowe = $resulte->fetch_assoc()) { ?>
-        <img src="<?php echo $rowe['image'] ?>" alt="" class="hpss">
-        <h1><?php echo $rowe['title'] ?></h1>
-        <p><?php echo $rowe['description'] ?></p>
-        <p><?php echo $rowe['year'] ?></p>
-        <div class="tags">
-            <?php while ($rowo = $resulto->fetch_assoc()) {?>
-            <span class="tag">
-                <?php echo $rowo['nameGenre'] ?>
-            </span>
+            <img src="<?php echo $rowe['image'] ?>" alt="">
+            <div class="movie-info">
+                <h1><?php echo $rowe['title'] ?></h1>
+                <p class="description2"><?php echo $rowe['description'] ?></p>
+                <div class="tags">
+                    <?php while ($rowo = $resulto->fetch_assoc()) { ?>
+                        <span class="tag2">
+                            <?php echo $rowo['nameGenre'] ?>
+                        </span>
+                    <?php } ?>
+                </div>
+                <p class="year2"><?php echo $rowe['year'] ?></p>
             <?php } ?>
+            <button class="review" onclick="openForm()">Make Review</button>
         </div>
-        <?php } ?>
-        <button class="review" onclick="openForm()">Make Review</button>
     </div>
 
     <div class="review-container">
@@ -77,19 +79,20 @@ $resulte = $koneksi->query($querye)
 
 
 
-    <script>
 
-        let reviewContainer = document.getElementsByClassName("review-container");
-
-        function closeForm() {
-            reviewContainer.style.display = "none";
-        }
-
-        function openForm() {
-            reviewContainer.style.display = "absolute";
-        }
-    </script>
 
 </body>
+<script>
+
+    let reviewContainer = document.getElementsByClassName("review-container");
+
+    function closeForm() {
+        reviewContainer.style.display = "none";
+    }
+
+    function openForm() {
+        reviewContainer.style.display = "block";
+    }
+</script>
 
 </html>
