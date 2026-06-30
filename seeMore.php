@@ -45,7 +45,7 @@ $resulte = $koneksi->query($querye)
         </div>
     </div>
 
-    <div class="review-container">
+    <div id="review-container">
         <form action="review.php" method="POST" class="review-form">
 
             <label for="star"><b>Stars</b></label>
@@ -84,7 +84,7 @@ $resulte = $koneksi->query($querye)
 </body>
 <script>
 
-    let reviewContainer = document.getElementsByClassName("review-container");
+    let reviewContainer = document.getElementById("review-container");
 
     function closeForm() {
         reviewContainer.style.display = "none";

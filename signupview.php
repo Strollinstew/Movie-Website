@@ -30,8 +30,11 @@ $resulto = $koneksi->query($queryo);
                 <input type="email" name="email" class="input" placeholder="Email">
                 <input type="password" name="password" class="input" placeholder="Password">
             </div>
-            <button>Log in</button>
+            <button>Sign up</button>
         </form>
+        <div class="form-section">
+            <p>Have an account? <a href="">Log in</a> </p>
+        </div>
     </div>
 </body>
 
